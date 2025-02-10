@@ -1,0 +1,81 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width = device-width, initial-scale=1.0">
+	<title>Random Password Generator</title>
+	<link rel="stylesheet" type="text/css" href="x.css">
+</head>
+<body>
+		<div class="container">
+		<h1><span class="x">Generate a</span><br><span class="a">random password</span></h1>
+		<div class="display">
+			<input type="text" id="password" placeholder="Password">
+			<img src="copy.png">
+		</div>
+		<div class="display">
+			<input type="text" id="password1" placeholder="Password">
+			<img src="copy.png">
+		</div>
+		<div class="display">
+			<input type="text" id="password2" placeholder="Password">
+			<img src="copy.png">
+		</div>
+		<div class="display">
+			<input type="text" id="password3" placeholder="Password">
+			<img src="copy.png">
+		</div>
+		<button onclick = "createPassword()"><img src="generate.png">Generate Password</button>
+
+	</div>
+<script>
+	const passwordBox = document.getElementById("password");
+	const passwordBox1 = document.getElementById("password1")
+	const passwordBox2 = document.getElementById("password2")
+	const passwordBox3 = document.getElementById("password3")
+	const length = 14;
+	const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+	const number = "1234567890";
+	const symbols = "@#$%^&*():><?:"
+	const allChars = upperCase + lowerCase + number + symbols; 
+	function createPassword() {
+		// body...
+		let password = "";
+
+		while(length > password.length){
+			password+= allChars[Math.floor(Math.random() * allChars.length)];
+
+		}
+		passwordBox.value = password;
+		let password1 = "";
+
+		while(length > password1.length){
+			password1+= allChars[Math.floor(Math.random() * allChars.length)];
+
+		}
+		passwordBox1.value += password1;
+		let password2 = "";
+
+		while(length > password2.length){
+			password2+= allChars[Math.floor(Math.random() * allChars.length)];
+
+		}
+		passwordBox2.value += password2
+		let password3 = "";
+
+		while(length > password3.length){
+			password+= allChars[Math.floor(Math.random() * allChars.length)];
+
+		}
+		passwordBox3.value += password3;
+		console.log(password1);
+		console.log(password2);
+		console.log(password3);
+
+	}
+
+</script>
+
+
+</body>
+</html>  
